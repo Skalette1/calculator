@@ -1,12 +1,26 @@
 var result = document.querySelector('.result');
-var number = document.querySelectorAll('.number');
-var btn = document.getElementsByTagName('button');
+var btn = document.querySelectorAll('.btn');
+var del = document.getElementById('delete');
+let tochka = document.getElementsByClassName('desyt');
 
-btn.forEach(btn => {
-    btn.addEventListener('click', function() {
-    result.textContent = btn;
+    btn.forEach(element => {
+    element.addEventListener('click', () => {
+    if (parseInt(result.textContent + element.textContent) <= 12) {
+    result.textContent += element.textContent
+    }else {
+        result.textContent = "Хьийз ма е и калькулятор"
+    }
     })
+});
+
+
+
+
+del.addEventListener('click', () => {
+    result.textContent = ''
 })
+
+
 
 function sum (number) {
 
@@ -35,3 +49,9 @@ function operate (num1, num2, operator) {
 
 //return text.content = const
 // text.content = '';
+
+if (parseInt(result.textContent + element.textContent) <= 12) {
+    result.textContent += element.textContent
+    }else {
+        result.textContent = "Хьийз ма е и калькулятор"
+    }

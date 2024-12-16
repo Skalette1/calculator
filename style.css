@@ -11,6 +11,7 @@
     align-items: center;
     flex-wrap: nowrap;
     transform: translateX(-3%);
+    font-family: 'ZTBrosOskon90s';
 }
 
 .container {
@@ -43,8 +44,8 @@
     margin: 3rem 0;
     text-align: right;
     font-size: 2rem;
-    font-weight: bold;
     min-height: 30px;
+    letter-spacing: 1px;
 }
 
 .mid {
@@ -53,7 +54,9 @@
 }
 
 button {
+    font-family: 'ZTBrosOskon90s';
     font-size: 1.2rem;
+    font-weight: 400;
     padding: .9rem;
     width: 3.2rem;
     border-radius: 50%;
