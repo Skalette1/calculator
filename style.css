@@ -20,7 +20,7 @@ body {
 
 .container {
     z-index: 1;
-    max-width: 320px;
+    width: 280px;
     height: 465px;
     margin-top: 13%;
     padding: .5rem 2rem;
@@ -41,24 +41,6 @@ body {
     top: 90px;
     transform: translateX(35%);
     filter: drop-shadow(2px 2px 12px #241b01);
-    animation: color-change 7s infinite;
-}
-
-@keyframes color-change {
-    30% {
-        background-color: rgb(147, 17, 17);
-    }
-    50% {
-        background-color: springgreen;
-    }
-
-    100% {
-        background-color: rgb(9, 9, 122);
-    }
-
-    0% {
-        background-color: #97680a;
-    }
 }
 
 .result {
@@ -67,6 +49,7 @@ body {
     font-size: 2rem;
     height: 30px;
     letter-spacing: 1px;
+    transform: translateY(6%);
 }
 
 .mid {
@@ -76,7 +59,7 @@ body {
 
 button {
     font-family: 'ZTBrosOskon90s';
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     padding: .9rem;
     width: 3.2rem;

@@ -1,14 +1,32 @@
 var result = document.querySelector('.result');
 var btn = document.querySelectorAll('.btn');
 var del = document.getElementById('delete');
-let tochka = document.getElementsByClassName('desyt');
+var plus = document.querySelector('.plus');
+var znak = document.querySelectorAll('.plus_minus');
+var ravno = document.querySelector('.ravno');
+var tochka = document.querySelectorAll('.desyt');
 let clickCount = 0;
-const maxCount = 10;
+const maxCount = 14;
+
+function sum (btn) {
+    let sumBtn = btn + btn;
+    return sumBtn;
+}
+
+plus.addEventListener('click', () => {
+    let sumResult = sumBtn;
+})
+
+function operate () {
+    ravno.addEventListener('click', () => {
+    result.textContent = sumResult.textContent
+    })
+}
 
     btn.forEach(element => {
     element.addEventListener('click', () => {
     if(clickCount <= maxCount) {
-        if(element.textContent === "." && result.textContent.includes('.')) {
+     if(element.textContent === "." && result.textContent.includes('.')) {
             return
         }
         result.textContent += element.textContent;
@@ -16,20 +34,17 @@ const maxCount = 10;
     }
     else {
         btn.disabled = true
-    }
-    })
+     }
+  })
 });
 
+
 del.addEventListener('click', () => {
-    result.textContent = ''
+    result.textContent = '';
     clickCount = 0
 })
 
 
-
-function sum (number) {
-
-}
 
 function subtract (number) {
 
@@ -43,9 +58,16 @@ function division (number) {
 
 }
 
-function operate (num1, num2, operator) {
-    
-}
+
+// function ChangeZnak(znak, btn) {
+//     znak.addEventListener('click', () => {
+//         if(btn.getAttribute('class')) {
+//             btn.setAttribute('class', '-' + btn.textContent);
+//         } else {
+//             btn.setAttribute('class', 'новое значение');
+//         }
+//     });
+// }
 
 
 
