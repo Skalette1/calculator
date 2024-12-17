@@ -7,7 +7,6 @@
     .container {
         max-width: 280px;
         min-height: 250px;
-        margin-top: .8em;
     } 
     
     .crug {
@@ -17,7 +16,7 @@
         z-index: .9;
         border-radius: 50%;
         position: absolute;
-        top: 15px;
+        top: -15px;
         transform: translateX(30%);
     }
 
@@ -47,7 +46,6 @@
         position: absolute;
         top: -5px;
         transform: translateX(30%);
-        overflow: hidden;
     }
 
     

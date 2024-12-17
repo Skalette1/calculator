@@ -5,6 +5,10 @@
     --text-color: #97680a;
 }
 
+body {
+    overflow: hidden;
+}
+
 .container-for-all {
     display: flex;
     justify-content: center;
@@ -17,7 +21,7 @@
 .container {
     z-index: 1;
     max-width: 320px;
-    min-height: 300px;
+    height: 465px;
     margin-top: 13%;
     padding: .5rem 2rem;
     background: rgba(255, 255, 255, .8);
@@ -36,15 +40,32 @@
     position: absolute;
     top: 90px;
     transform: translateX(35%);
-    overflow: hidden;
     filter: drop-shadow(2px 2px 12px #241b01);
+    animation: color-change 7s infinite;
+}
+
+@keyframes color-change {
+    30% {
+        background-color: rgb(147, 17, 17);
+    }
+    50% {
+        background-color: springgreen;
+    }
+
+    100% {
+        background-color: rgb(9, 9, 122);
+    }
+
+    0% {
+        background-color: #97680a;
+    }
 }
 
 .result {
     margin: 3rem 0;
     text-align: right;
     font-size: 2rem;
-    min-height: 30px;
+    height: 30px;
     letter-spacing: 1px;
 }
 
