@@ -7,6 +7,7 @@
 
 body {
     overflow: hidden;
+    background: rgba(0, 0, 0, .2);
 }
 
 .container-for-all {
@@ -29,6 +30,7 @@ body {
     border-radius: 1.7rem;
     box-shadow: 0 0 15px #000;
     color: var(--text-color);
+    position: relative;
 }
 
 .crug {
@@ -44,17 +46,20 @@ body {
 }
 
 .result {
+    font-family: 'roboto';
+    font-weight: 500;
     margin: 2rem 0;
     text-align: center;
     font-size: 2rem;
     height: 30px;
-    letter-spacing: 1px;
-    transform: translateY(6%);
-    border: none;
     width: 100%;
+    letter-spacing: 1px;
+    transform: translateY(40%);
+    border: 2px solid #000;
     height: 4rem;
     background: transparent;
     color: var(--krug-back);
+    color: #010000;
 }
 
 .mid {
@@ -86,4 +91,16 @@ button {
 .zero {
     width: 7rem;
     border-radius: 2rem;
+}
+
+.back {
+    position: absolute;
+    transform: translate(450%, -290%) scale(.83);
+    text-align: left;
+    background-color: #000;
+    font-size: 1.2rem;
+    padding: .7rem .5rem;
+    display: flex;
+    justify-content: center;
+    color: #ebb63a;
 }

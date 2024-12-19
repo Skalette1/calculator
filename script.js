@@ -4,13 +4,13 @@ var del = document.getElementById('delete');
 var ravno = document.querySelector('.ravno');
 var plusMinus = document.querySelector('.plus_minus')
 var procent = document.querySelector('.procent')
+var backSpace = document.querySelector('.back')
+var znak = document.querySelectorAll('.znak')
 let clickCount = 0;
 const maxCount = 12;
 let x = ''
 let y = ''
 var operator = ''
-
-
 
     btn.forEach(element => {
     element.addEventListener('click', () => {
@@ -102,7 +102,22 @@ plusMinus.addEventListener('click', () => {
 
 procent.addEventListener('click', () => {
     var current = parseFloat(result.value);
-    result.value = current/100
+    result.value = current / 100
 })
 
+backSpace.addEventListener('click', () => {
+    if(result.value.length > 0) {
+    result.value = result.value.slice(0, -2);
+    clickCount --;
+    }
+})
 
+// znak.forEach(element => {
+//     element.addEventListener('click',() => {
+//         if(result.value === "" && x === "+/-" || x === "%" || x === "÷" ) {
+//             alert('Введи нормальное значение');
+//         }
+//     })
+// })
+   
+ 
