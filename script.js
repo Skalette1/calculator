@@ -1,22 +1,22 @@
 var result = document.querySelector('.result');
 var btn = document.querySelectorAll('.btn');
 var del = document.getElementById('delete');
-var plus = document.querySelector('.plus');
-var znak = document.querySelectorAll('.plus_minus');
 var ravno = document.querySelector('.ravno');
-var tochka = document.querySelectorAll('.desyt');
-var operator = document.querySelectorAll('.znak')
-var number = document.querySelectorAll('.number')
+var plusMinus = document.querySelector('.plus_minus')
+var procent = document.querySelector('.procent')
 let clickCount = 0;
 const maxCount = 12;
-var summa = 0
+let x = ''
+let y = ''
+var operator = ''
+
 
     btn.forEach(element => {
     element.addEventListener('click', () => {
-    if(clickCount <= maxCount) {
-     if(element.textContent === "." && result.textContent.includes('.')) {
+    if(clickCount < maxCount) {
+     if(element.textContent === "." && result.value.includes('.')) {
+        return
         }
-        summa += parseInt(element.textContent);
         result.value += element.textContent;
         clickCount ++
     }
@@ -29,8 +29,9 @@ var summa = 0
 del.addEventListener('click', () => {
     result.value = ""
     clickCount = 0
-    summa = 0
-    result.style.color = 'black'
+    x = '';
+    y = '';
+    operator = '';
 })
 
 function add (x, y) {
@@ -46,66 +47,55 @@ function multiply (x, y) {
 }
 
 function division (x, y) {
+    if (x/0) {
+        return "Шутишь что ли?"
+    }
     return x / y
 }
 
-function operate (x, y, operator) {
-        if (operator === '+') {
-            return add
-        }
-        else if (operator === '-') {
-            return subtract
-        }
-        else if (operator === '*') {
-            return multiply
-        }
-        else if (operator === '/') {
-            return division
-        }
-        else {
-            return 'ERROR'
-        }
+function operate(op, x, y) {
+    switch (op) {
+        case '+': return add(x, y);
+        case '-': return subtract(x, y);
+        case 'x': return multiply(x, y);
+        case '÷': return division(x, y);
+        default: return null;
     }
+}
 
-    ravno.addEventListener('click', () => {
-        result.value += parseFloat(summa);
-        result.style.cssText = 'color: #97680a'
+ravno.addEventListener('click', () => {
+if (x === '' && operator === '') {
+    x = result.value
+}
+else if (x !== '' && operator !== '') {
+    y = result.value
+
+ const resultValue = operate(operator, parseFloat(x), parseFloat(y));
+ result.value = resultValue
+} 
+});
+
+btn.forEach(element => {
+    if (['+', '-', 'x', '÷'].includes(element.textContent)) {
+        element.addEventListener('click', ()=> {
+            if (result.value !== '') {
+                operator = element.textContent;
+                x = result.value;
+                result.value = ''
+            }
+        });
+    }
 })
 
+plusMinus.addEventListener('click', () => {
+    var current = parseFloat(result.value);
+    result.value = current * -1
 
- 
+});
 
+procent.addEventListener('click', () => {
+    var current = parseFloat(result.value);
+    result.value = current/100
+})
 
-// function ChangeZnak(znak, btn) {
-//     znak.addEventListener('click', () => {
-//         if(btn.getAttribute('class')) {
-//             btn.setAttribute('class', '-' + btn.textContent);
-//         } else {
-//             btn.setAttribute('class', 'новое значение');
-//         }
-//     });
-// }
-
-
-
-
-
-
-//return text.content = const
-// text.content = '';
-
-// if (parseInt(result.textContent + element.textContent) <= 12) {
-//     result.textContent += element.textContent
-//     }else {
-//         result.textContent = "Хьийз ма е и калькулятор"
-//     }
-//     clickCount ++
-//     if(clickCount === maxCount) {
-//         btn.disabled = true;
-//         result.textContent += ''
-//     }
-
-
-// if(result.textContent <=10) {
-//     alert = "ERROR"
-// }
+result.style.cssText = 'color: #b88206';
