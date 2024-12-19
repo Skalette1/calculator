@@ -47,10 +47,12 @@ function multiply (x, y) {
 }
 
 function division (x, y) {
-    if (x/0) {
+    if (y === 0) {
         return "Шутишь что ли?"
     }
-    return x / y
+    else {
+      return x / y
+    }
 }
 
 function operate(op, x, y) {

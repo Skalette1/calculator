@@ -20,10 +20,10 @@ body {
 
 .container {
     z-index: 1;
-    width: 280px;
+    width: 275px;
     height: 465px;
     margin-top: 13%;
-    padding: .5rem 2rem;
+    padding: .8rem 2rem;
     background: rgba(255, 255, 255, .8);
     backdrop-filter: blur(5px);
     border-radius: 1.7rem;
