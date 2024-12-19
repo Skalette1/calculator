@@ -51,7 +51,7 @@ function division (x, y) {
         return "Шутишь что ли?"
     }
     else {
-      return x / y
+        return (x / y).toFixed(2)
     }
 }
 
