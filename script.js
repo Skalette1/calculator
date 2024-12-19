@@ -11,6 +11,7 @@ let y = ''
 var operator = ''
 
 
+
     btn.forEach(element => {
     element.addEventListener('click', () => {
     if(clickCount < maxCount) {
@@ -50,8 +51,12 @@ function division (x, y) {
     if (y === 0) {
         return "Шутишь что ли?"
     }
+    else if (x % y ===0) {
+        return x / y
+    }
     else {
-        return (x / y).toFixed(2)
+        return parseFloat((x / y).toFixed(2))
+
     }
 }
 
@@ -100,4 +105,4 @@ procent.addEventListener('click', () => {
     result.value = current/100
 })
 
-result.style.cssText = 'color: #b88206';
+
