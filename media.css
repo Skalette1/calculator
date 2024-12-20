@@ -1,7 +1,11 @@
 @media(max-width: 470px) {
 
+    body {
+        overflow: hidden;
+    }
+
     .container-for-all {
-        transform: translateY(30%);
+        transform: translateY(13%);
     }
 
     .container {
