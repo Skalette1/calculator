@@ -59,7 +59,7 @@ body {
     height: 4rem;
     background: transparent;
     color: var(--krug-back);
-    color: #010000;
+    color: var(--krug-back);
 }
 
 .mid {
